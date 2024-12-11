@@ -9,15 +9,18 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-  rpi: require_prior_idle {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "tap-preferred";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <200>;
-    require-prior-idle-ms = <125>;
-    bindings = <&kp>, <&kp>;
-};
+    rpi: require_prior_idle {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+        quick-tap-ms = <200>;
+        require-prior-idle-ms = <125>;
+        bindings = <&kp>, <&kp>;
+    };
+
+    behaviors {
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -30,10 +33,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&mt ESCAPE TAB  &kp Q        &kp W             &kp E            &kp R               &kp T        &kp Y    &kp U           &kp I            &kp O              &kp P           &kp BSPC
-&kp LEFT_SHIFT  &mt LCTRL A  &mt LEFT_SHIFT S  &mt RIGHT_ALT D  &mt LEFT_COMMAND F  &kp G        &kp H    &mt LEFT_WIN J  &mt RIGHT_ALT K  &mt RIGHT_SHIFT L  &mt RCTRL SEMI  &kp SQT
-&kp LCTRL       &kp Z        &kp X             &kp C            &kp V               &kp B        &kp N    &kp M           &kp COMMA        &kp DOT            &kp FSLH        &kp BACKSLASH
-                                               &kp LGUI         &mo 1               &kp SPACE    &kp RET  &mo 2           &kp RALT
+&rpi ESCAPE TAB  &kp Q         &kp W              &kp E             &kp R                &kp T        &kp Y    &kp U            &kp I             &kp O               &kp P            &kp BSPC
+&kp LEFT_SHIFT   &rpi LCTRL A  &rpi LEFT_SHIFT S  &rpi RIGHT_ALT D  &rpi LEFT_COMMAND F  &kp G        &kp H    &rpi LEFT_WIN J  &rpi RIGHT_ALT K  &rpi RIGHT_SHIFT L  &rpi RCTRL SEMI  &kp SQT
+&kp LCTRL        &kp Z         &kp X              &kp C             &kp V                &kp B        &kp N    &kp M            &kp COMMA         &kp DOT             &kp FSLH         &kp BACKSLASH
+                                                  &kp LGUI          &mo 1                &kp SPACE    &kp RET  &mo 2            &kp RALT
             >;
         };
 
