@@ -9,37 +9,6 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    behaviors {
-        HMR: HMR {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HMR";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            flavor = "tap-preferred";
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
-            hold-trigger-on-release;
-        };
-
-        HML: HML {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HML";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            flavor = "tap-preferred";
-            hold-trigger-on-release;
-            hold-trigger-key-positions = <36 37 38 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
-        };
-    };
-
-    behaviors {
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -51,10 +20,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&HML ESCAPE TAB  &kp Q         &kp W              &kp E             &kp R                &kp T        &kp Y    &kp U            &kp I             &kp O               &kp P            &kp BSPC
-&kp LEFT_SHIFT   &HML LCTRL A  &HML LEFT_SHIFT S  &HML RIGHT_ALT D  &HML LEFT_COMMAND F  &kp G        &kp H    &HML LEFT_WIN J  &HML RIGHT_ALT K  &HML RIGHT_SHIFT L  &HML RCTRL SEMI  &kp SQT
-&kp LCTRL        &kp Z         &kp X              &kp C             &kp V                &kp B        &kp N    &kp M            &kp COMMA         &kp DOT             &kp FSLH         &kp BACKSLASH
-                                                  &kp LGUI          &mo 1                &kp SPACE    &kp RET  &mo 2            &kp RALT
+&kp TAB         &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&kp LEFT_SHIFT  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LCTRL       &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp BACKSLASH
+                              &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
             >;
         };
 
