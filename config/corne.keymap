@@ -41,7 +41,6 @@
 
     combos {
         compatible = "zmk,combos";
-
         l3 {
             bindings = <&mo 3>;
             key-positions = <37 40>;
